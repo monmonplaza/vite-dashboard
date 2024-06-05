@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Posts from "./components/pages/developer/post/Posts";
 const App = () => {
   return (
-    <Router>
+    <Router basename={"/vite-dashboard/"}>
       <Routes>
         <Route path="/post" element={<Posts />} />
       </Routes>
