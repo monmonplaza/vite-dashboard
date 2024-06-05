@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "gilroy-light";
+  src: url(font/gilroy-light.woff) format("woff");
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "gilroy-regular";
+  src: url(font/gilroy-regular.woff) format("woff");
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "gilroy-bold";
+  src: url(font/gilroy-bold.woff) format("woff");
+
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "gilroy-heavy";
+  src: url(font/gilroy-heavy.woff) format("woff");
+
+  font-display: swap;
+}
+
+
+:root {
+  --primary: 255, 255, 255; 
+  --secondary: 240, 240, 240; 
+  --line : 218, 218, 218;
+  --header : 37, 37, 37;
+  --body : 75, 75, 75;
+  --table-head: 248,248,248;
+  --table-body: 228,228,228;
+  --table-body: 228,228,228;
+  --accent : 99, 11, 60;
+ 
+ 
+}
+
+.dark {
+
+  --primary: 39, 39, 39; 
+  --secondary: 35, 35, 35; 
+  --line : 75, 75, 75;
+  --header : 255, 255, 255;
+  --body : 120, 120, 120;
+  --table-head: 80, 80, 80;
+  --table-body: 45, 45, 45;
+  --table-hover: 50, 50, 50;
+  --accent : 197, 27, 122;
+  
+} 
+
+@layer base {
+  body {
+    @apply font-sansRegular leading-relaxed overflow-x-hidden bg-primary text-header tracking-wide	
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply  text-header text-balance leading-tight mb-4 font-bold font-[montserrat-bold]
+  }
+
+  h1 {
+    @apply text-[min(8vw,40px)] 
+  }
+
+  h2 {
+    @apply text-[min(7.5vw,35px)]
+  }
+
+  h3 {
+    @apply text-[min(6vw,20px)]
+  }
+
+  h4 {
+    @apply text-[min(5vw,16px)]
+  }
+
+  h5 {
+    @apply text-[min(4.7vw,14px)]
+  }
+
+  h5 {
+    @apply text-[min(4.2vw,12px)]
+  }
+
+
+  p {
+    @apply mb-1.5 text-balance text-body text-sm
+  }
+
+  img {
+    @apply block w-full
+  }
+
+  button {
+    @apply cursor-pointer bg-transparent outline-none
+  }
+
+  ol, ul {
+    @apply list-none
+  }
+
+  a {
+    @apply no-underline	
+  }
+
+  .input-wrap  {
+    @apply mb-5
+  }
+  label {
+    @apply block text-xs
+  }
+
+  table {
+    @apply w-full rounded-md overflow-hidden
+  }
+
+  table thead {
+    @apply bg-tableHead 
+  }
+
+  table tbody tr {
+    @apply bg-tableBody border-b border-secondary hover:bg-tableHover
+  }
+  table tbody tr td,
+  table thead tr th {
+    @apply p-2 py-3  text-left text-xs font-normal 
+  }
+
+
+  
+
+  
+
+
+
+}
+@layer components {
+  .container {
+    @apply max-w-[1400px] mx-auto w-full px-1.5
+  }
+
+ 
+  .lucide {
+    @apply text-header
+  }
+
+  .table-action {
+    @apply flex justify-end  
+  }
+
+  .table-action li {
+    @apply px-2
+  }
+  .table-action button .lucide {
+    @apply text-sm size-[13px]
+  }
+
+
+  /* NAVIGATION */
+  .nav-link a {
+    @apply hover:text-accent opacity-60
+  }
+  .nav-link-active {
+    @apply relative bg-secondary after:content-[''] after:absolute after:h-full  after:w-[3px] after:top-0 after:right-0 after:bg-accent after:block 
+  }
+  .nav-link-active a { @apply opacity-100}
+
+}
+@layer utilities {}
+
+
+/* .slide-in, 
+.slide-out  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #0f0f0f;
+    transform-origin: bottom;
+    z-index: 999999;
+}
+
+.slide-out {
+    transform-origin: top;
+} */
